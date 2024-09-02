@@ -44,7 +44,7 @@ var alphaNum map[rune]int
 
 var extra map[rune]int
 
-func initialize() {
+func init() {
 	numAlpha = make(map[int]rune)
 	alphaNum = make(map[rune]int)
 	extra = make(map[rune]int)
@@ -62,7 +62,6 @@ func initialize() {
 }
 
 func Encrypt(password string, salt rune) string {
-	initialize()
 
 	rand := randc(extra[salt])
 	prev := salt
